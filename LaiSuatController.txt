@@ -1,0 +1,30 @@
+public class LaiSuatController : Controller
+{
+	public IActionResult Index()
+	{
+		LaiSuat ls = new LaiSuat();
+		return View(ls);
+	}
+	[HttpPost]
+	public IActionResult Index(int sotien, double laisuat, int kyhan)
+	{
+		double tienlai = sotien * (laisuat / 1200) * kyhan;
+
+		//truyền dữ liệu theo đối tượng
+		//LaiSuat ls = new LaiSuat();
+		//ls.SoTienGui = sotien.ToString("N0");
+		//ls.LaiSuatGui = laisuat.ToString();
+		//ls.KyHan = kyhan.ToString();
+		//ls.SoTienLai = tienlai.ToString("N0");
+		//ls.TongSoTien = (sotien + tienlai).ToString("N0");
+		//return View(ls);
+
+		//truyền dữ liệu theo ViewData
+		ViewData["SoTienGui"] = sotien.ToString("N0");
+		ViewData["LaiSuatGui"] = laisuat.ToString();
+		ViewData["KyHan"] = kyhan.ToString();
+		ViewData["SoTienLai"] = tienlai.ToString("N0");
+		ViewData["TongSoTien"] = (sotien + tienlai).ToString("N0");
+		return View();
+	}
+}

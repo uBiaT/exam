@@ -1,0 +1,18 @@
+public class LaiSuat
+{
+	public string SoTienGui { get; set; }
+	public string LaiSuatGui { get; set; }
+	public string KyHan { get; set; }
+	public string SoTienLai { get; set; }
+	public string TongSoTien { get; set; }
+
+	public LaiSuat() 
+	{
+		SoTienGui = string.Empty;
+		LaiSuatGui = string.Empty;
+		KyHan = string.Empty;
+		SoTienLai = string.Empty;
+		TongSoTien = string.Empty;
+	}
+
+}
